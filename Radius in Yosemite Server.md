@@ -11,11 +11,11 @@ Your certificate will be in the folder: /etc/certificates and will have the form
 
 Note that these should be kept confidential, so don't make copies. Instead we will import the location in to the radius conf file. The followinf command will do this. Note that it is all one line and that the order is (proably, I didn't test it) important:
 
-sudo radiusconfig -installcerts /etc/certificates/hostname.SHA1 fingerprint.key.pem /etc/certificates/hostname.SHA1 fingerprint.cert.pem /etc/certificates/hostname.SHA1 fingerprint.chain.pem
+	sudo radiusconfig -installcerts /etc/certificates/hostname.SHA1 fingerprint.key.pem /etc/certificates/hostname.SHA1 fingerprint.cert.pem /etc/certificates/hostname.SHA1 fingerprint.chain.pem
 
 Your key is encrypted (this is a good thing, but we don't know what the password is. Fortunately, your keychain does. Tell radius by having it ask you for the password:
 
-sudo radiusconfig -setcertpassword
+	sudo radiusconfig -setcertpassword
 
 and responding with the magic incantation:
 Apple:UserCertAdmin
@@ -24,7 +24,7 @@ Apple:UserCertAdmin
 
 Now it's time to check your config. Make sure radius is not running (sudo radiusconfig -stop) and start it in foreground mode:
 
-sudo radiusd -X
+	sudo radiusd -X
 
 If you're happy with it so far, cquit (Ctrl-c) and continue by adding your base station / radis devices:
 
@@ -36,10 +36,11 @@ If you're happy with it so far, cquit (Ctrl-c) and continue by adding your base 
 
 
 Again, check that all is well...
+
 	radiusd -sfX
 
 #####Finally launch it using the launchd 
-	launchctl load /System/Library/LaunchDaemons/org.freeradius.radiusd.plist
+	sudo launchctl enable system/org.freeradius.radiusd
 
 
 #####if while testing you're banging your head against a wall because your client computer can't authenticate,  remove the 802.1X Password for the Wireless from your login keychain and it should re-ask for username and password.
