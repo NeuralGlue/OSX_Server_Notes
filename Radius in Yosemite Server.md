@@ -41,7 +41,8 @@ Again, check that all is well...
 
 	radiusd -sfX
 
-Finally launch it using the launchd 
+Finally launch it using the launchd system:
+
 	sudo launchctl enable system/org.freeradius.radiusd
 
 (did you notice that launchctl has changed again!)
