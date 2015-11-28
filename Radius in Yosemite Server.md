@@ -21,7 +21,7 @@ Your key is encrypted (this is a good thing), but we don't know what the passwor
 
 and responding with the magic incantation:
 
-	Apple:UserCertAdmin
+	Apple:UseCertAdmin
 
 (note that there are no spaces in the passphrase).
 
