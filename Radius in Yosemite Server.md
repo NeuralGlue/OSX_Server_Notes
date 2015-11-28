@@ -46,6 +46,7 @@ Again, check that all is well...
 
 Finally launch it using the launchd system:
 
+	sudo launchctl load /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/org.freeradius.radiusd.plist
 	sudo launchctl enable system/org.freeradius.radiusd
 
 (did you notice that launchctl has changed again!)
