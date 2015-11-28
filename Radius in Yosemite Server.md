@@ -44,10 +44,9 @@ Again, check that all is well...
 
 	radiusd -sfX
 
-Finally launch it using the launchd system:
+Finally launch it using the serveradmin system:
 
-	sudo launchctl load /Applications/Server.app/Contents/ServerRoot/System/Library/LaunchDaemons/org.freeradius.radiusd.plist
-	sudo launchctl enable system/org.freeradius.radiusd
+	sudo serveradmin start radius
 
 (did you notice that launchctl has changed again!)
 
