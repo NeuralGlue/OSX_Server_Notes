@@ -30,10 +30,13 @@ Now it's time to check your config. Make sure radius is not running (sudo radius
 	sudo radiusd -X
 
 If you're happy with it so far, cquit (Ctrl-c) and continue by adding your base station / radius devices:
+
 radiusconfig -addclient BASE_STATION  SHORTNAME TYPE
+
 	radiusconfig -addclient 192.168.2.9 netgear-switch-1 other
 
-make sure it got added correctly
+make sure it got added correctly:
+
 	radiusconfig -naslist
 
 
